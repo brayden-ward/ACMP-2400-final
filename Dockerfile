@@ -1,0 +1,13 @@
+FROM python3.13.13-slim-trixie@sha256:2ba73a4dc380f21137fc75296abfa2add90b51fd10b609ce530b40cc097269b1
+
+WORKDIR /app
+
+COPy requirements.txt .
+
+RUN pipinstall -r requirements.txt
+
+COPY . .
+
+EXPOSE 8000
+
+CMD ["python", "mange.py", "runserver", "0.0.0.0:8000")
