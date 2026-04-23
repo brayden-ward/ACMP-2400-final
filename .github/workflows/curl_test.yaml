@@ -16,5 +16,5 @@ jobs:
           docker run -d -p 8000:8000 -e 'DJANGO_SECRET_KEY=decpassworddontuseme' pipelin-test
       - name: curl_ftw
         run: |
-          curl -T http://localhost:8000/
+          curl -f http://localhost:8000/
           
