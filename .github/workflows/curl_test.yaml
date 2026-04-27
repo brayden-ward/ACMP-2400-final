@@ -15,10 +15,6 @@ jobs:
         run: |
           docker run -d -p 8000:8000 -e DJANGO_SECRET_KEY='decpassworddontuseme' --name final-app pipeline-test
           sleep 10
-      - name: check_container
-        run: |
-          docker ps -a
-          docker logs final-app
       - name: curl_ftw
         run: |
           curl -f http://localhost:8000/
