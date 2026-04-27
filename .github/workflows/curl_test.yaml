@@ -13,7 +13,8 @@ jobs:
           docker build -t pipeline-test .
       - name: docker_run
         run: |
-          docker run -d -p 8000:8000 -e 'DJANGO_SECRET_KEY=decpassworddontuseme' pipeline-test
+          docker run -d -p 8000:8000 -e DJANGO_SECRET_KEY='decpassworddontuseme' pipeline-test
+          sleep 5
       - name: curl_ftw
         run: |
           curl -f http://localhost:8000/
