@@ -5,6 +5,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y curl ca-certifi
     curl -sSfL https://get.anchore.io/grype | sh -s -- -b /usr/local/bin 
 
 COPY requirements.txt .
-COPY entrypoint.sh
+COPY entrypoint.sh .
 
 CMD ["bash", "entrypoint.sh"]
