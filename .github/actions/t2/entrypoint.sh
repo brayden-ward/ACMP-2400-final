@@ -10,6 +10,11 @@ export STATE_KEY=${INPUT_STATE_KEY}
 export TF_STAGE=${INPUT_TF_STAGE}
 #export DJANGO_SECRET_KEY_PROD=${INPUT_DJANGO_SECRET_KE_PROD}
 
+az login --service-principal \
+  -u "$ARM_CLIENT_ID" \
+  -p "$ARM_CLIENT_SECRET" \
+  --tenant "$ARM_TENANT_ID"
+
 if [[ "$TF_STAGE" == "stage1" ]]; then
   terraform -chdir=${INPUT_TF_STAGE} init -backend-config="key=${INPUT_STATE_KEY}.tfstate"
   terraform -chdir=${INPUT_TF_STAGE} plan -out=${INPUT_TF_STAGE}.tfplan
