@@ -13,7 +13,7 @@ terraform {
     resource_group_name = "rg-acmp-final"
     storage_account_name = "acmp2400storageaccount"
     container_name = "big-tf-state-acmp2400"
-    key = braydenward.tfstate
+    key = "braydenward.tfstate"
     use_azuread_auth = true
   }
 }
@@ -40,7 +40,7 @@ resource "azurerm_container_group" "aci-brayden-acmp" {
 
   container {
   name = "final"
-  image = "acrbraydenacmp2400.zaurect.io/Final:latest"
+  image = "acrbraydenacmp2400.azurect.io/final:latest"
   cpu = "0.5"
   memory = "1.5"
 
@@ -55,7 +55,7 @@ resource "azurerm_container_group" "aci-brayden-acmp" {
 }
 
   image_registry_credential {
-    server = "arcbraydenacmp2400.azurecr.io"
+    server = "arcbrayden2400.azurecr.io"
     username = var.ARM_CLIENT_ID
     password = var.ARM_CLIENT_SECRET
   }
