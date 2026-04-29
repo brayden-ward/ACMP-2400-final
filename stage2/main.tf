@@ -22,7 +22,7 @@ provider "azurerm" {
   features{}
 }
 
-resource "azurerm_container_registry" "teacher-acr" {
+resource "azurerm_container_registry" "teacher_acr" {
   name = "acrbrayden2400"
   resource_group_name = "rg-braydenward"
   location = "Central US"
@@ -30,7 +30,7 @@ resource "azurerm_container_registry" "teacher-acr" {
   admin_enabled = false
 }
 
-resource "azurerm_container_group" "aci-brayden-acmp" {
+resource "azurerm_container_group" "aci_brayden_acmp" {
   name = "aci-brayden-acmp"
   resource_group_name = "rg-braydenward"
   location = "Central US"
