@@ -40,7 +40,7 @@ resource "azurerm_container_group" "aci_brayden_acmp" {
 
   container {
   name = "final"
-  image = "acrbraydenacmp2400.azurect.io/final:latest"
+  image = "acrbrayden2400.azurect.io/final:latest"
   cpu = "0.5"
   memory = "1.5"
 
