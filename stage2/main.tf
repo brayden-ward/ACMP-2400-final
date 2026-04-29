@@ -30,8 +30,8 @@ resource "azurerm_container_registry" "teacher-acr" {
   admin_enabled = false
 }
 
-resource "azurerm_container_registry" "teacher-ac1" {
-  name = "acrbrayden2400"
+resource "azurerm_container_group" "aci-brayden-acmp" {
+  name = "aci-brayden-acmp"
   resource_group_name = "rg-braydenward"
   location = "Central US"
   ip_address_type = "Public"
