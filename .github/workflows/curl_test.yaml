@@ -68,8 +68,21 @@ jobs:
           docker build -t application-final .
           docker tag application-final acrbrayden2400.azurecr.io/final
           docker push acrbrayden2400.azurecr.io/final
-          
-
-   
         
+  tf-stage-2:
+    needs: build-tag-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: get_code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - name: run_terraform_stage2
+        uses: ./.github/actions/t2
+        with:
+          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+          STATE_KEY: 'braydenward'
+          TF_STAGE: 'stage2'
+          DJANGO_SECRET_KEY: ${{ secrets.DJANOG_SECRET_KEY_PROD }}
       
