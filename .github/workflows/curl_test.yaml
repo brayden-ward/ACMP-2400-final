@@ -84,5 +84,5 @@ jobs:
           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
           STATE_KEY: 'braydenward'
           TF_STAGE: 'stage2'
-          DJANGO_SECRET_KEY: ${{ secrets.DJANOG_SECRET_KEY_PROD }}
+          DJANGO_SECRET_KEY_PROD: ${{ secrets.DJANOG_SECRET_KEY_PROD }}
       
