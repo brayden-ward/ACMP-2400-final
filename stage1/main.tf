@@ -20,7 +20,7 @@ provider "azurerm" {
 
 resource "azurerm_container_registry" "teacher-acr" {
   name = "acrbrayden2400"
-  resource_group_name = "rg-acmp-final"
+  resource_group_name = "rg-braydenward"
   location = "Central US"
   sku = "Basic"
   admin_enabled = false
