@@ -22,6 +22,6 @@ resource "azurerm_container_registry" "teacher-acr" {
   name = "acrbrayden2400"
   resource_group_name = "rg-acmp-final"
   location = "Central US"
-  sku = "basic"
+  sku = "Basic"
   admin_enabled = false
 }
