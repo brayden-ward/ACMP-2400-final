@@ -4,12 +4,12 @@ author: 'Brayden'
 inputs:
   ARM_CLIENT_ID:
     description: 'the azure cline id'
-    required: treu
+    required: true
   ARM_CLIENT_SECRET:
     description: 'the azure client secret'
     required: true
   ARM_SUBSCRIPTION_ID:
-    description: 'the azure sub
+    description: 'the azure sub'
     required: true
   ARM_TENANT_ID:
     description: 'the azure tenant id'
