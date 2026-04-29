@@ -34,5 +34,20 @@ jobs:
           name: project-sbom
           path: sbom.json
           compression-level: 0
+
+  Terraform-stage-1:
+    needs: [build-and-curl,sbom-scan-and-test]
+    runs-on: ubuntu-latest
+    steps:
+    - name: get_code
+      uses: ./.github/actions/t2
+      with:
+        ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+        ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+        ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+        ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+        STATE_KEY: 'braydenward'
+        TF_STAGE: 'stage1'
+   
         
       
