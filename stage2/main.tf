@@ -40,7 +40,7 @@ resource "azurerm_container_group" "aci_brayden_acmp" {
 
   container {
   name = "final"
-  image = "acrbrayden2400.azurect.io/final:latest"
+  image = "acrbrayden2400.azurecr.io/final:latest"
   cpu = "0.5"
   memory = "1.5"
 
@@ -55,7 +55,7 @@ resource "azurerm_container_group" "aci_brayden_acmp" {
 }
 
   image_registry_credential {
-    server = "arcbrayden2400.azurecr.io"
+    server = "acrbrayden2400.azurecr.io"
     username = var.ARM_CLIENT_ID
     password = var.ARM_CLIENT_SECRET
   }
