@@ -101,6 +101,7 @@ jobs:
   
   Stage3-the-destroyer:
     needs: pre-eval
+    if: always()
     runs-on: ubuntu-latest
     steps:
     - name: get_code
